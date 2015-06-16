@@ -1,0 +1,457 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6E44ECFA1B2F88A6005911D5 /* fruit-and-vegetables.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6E44ECF91B2F88A6005911D5 /* fruit-and-vegetables.jpg */; };
+		6E44ECFC1B2F88C4005911D5 /* 3749818-big-cup-in-best-blue-chef-robot-gestures-3d-robot.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6E44ECFB1B2F88C4005911D5 /* 3749818-big-cup-in-best-blue-chef-robot-gestures-3d-robot.jpg */; };
+		6E59B5E81B2E2BA800ECA6F5 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E59B5E71B2E2BA800ECA6F5 /* SecondViewController.m */; };
+		6EA5349E1B2F1B5100C69118 /* thirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EA5349D1B2F1B5100C69118 /* thirdViewController.m */; };
+		6EC414BB1B2B67B300A0B2C4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EC414BA1B2B67B300A0B2C4 /* main.m */; };
+		6EC414BE1B2B67B300A0B2C4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EC414BD1B2B67B300A0B2C4 /* AppDelegate.m */; };
+		6EC414C11B2B67B300A0B2C4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EC414C01B2B67B300A0B2C4 /* ViewController.m */; };
+		6EC414C41B2B67B300A0B2C4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6EC414C21B2B67B300A0B2C4 /* Main.storyboard */; };
+		6EC414C61B2B67B300A0B2C4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6EC414C51B2B67B300A0B2C4 /* Images.xcassets */; };
+		6EC414C91B2B67B300A0B2C4 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6EC414C71B2B67B300A0B2C4 /* LaunchScreen.xib */; };
+		6EC414D51B2B67B300A0B2C4 /* robo_chefTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EC414D41B2B67B300A0B2C4 /* robo_chefTests.m */; };
+		6EC414DF1B2B78C800A0B2C4 /* robot-chef1.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EC414DE1B2B78C800A0B2C4 /* robot-chef1.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		6EC414CF1B2B67B300A0B2C4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6EC414AD1B2B67B300A0B2C4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6EC414B41B2B67B300A0B2C4;
+			remoteInfo = robo_chef;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		6E44ECF91B2F88A6005911D5 /* fruit-and-vegetables.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "fruit-and-vegetables.jpg"; sourceTree = "<group>"; };
+		6E44ECFB1B2F88C4005911D5 /* 3749818-big-cup-in-best-blue-chef-robot-gestures-3d-robot.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "3749818-big-cup-in-best-blue-chef-robot-gestures-3d-robot.jpg"; sourceTree = "<group>"; };
+		6E59B5E61B2E2BA800ECA6F5 /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
+		6E59B5E71B2E2BA800ECA6F5 /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		6EA5349C1B2F1B5100C69118 /* thirdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = thirdViewController.h; sourceTree = "<group>"; };
+		6EA5349D1B2F1B5100C69118 /* thirdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = thirdViewController.m; sourceTree = "<group>"; };
+		6EC414B51B2B67B300A0B2C4 /* robo_chef.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = robo_chef.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6EC414B91B2B67B300A0B2C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6EC414BA1B2B67B300A0B2C4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		6EC414BC1B2B67B300A0B2C4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		6EC414BD1B2B67B300A0B2C4 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		6EC414BF1B2B67B300A0B2C4 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		6EC414C01B2B67B300A0B2C4 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		6EC414C31B2B67B300A0B2C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		6EC414C51B2B67B300A0B2C4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		6EC414C81B2B67B300A0B2C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		6EC414CE1B2B67B300A0B2C4 /* robo_chefTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = robo_chefTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6EC414D31B2B67B300A0B2C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6EC414D41B2B67B300A0B2C4 /* robo_chefTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = robo_chefTests.m; sourceTree = "<group>"; };
+		6EC414DE1B2B78C800A0B2C4 /* robot-chef1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "robot-chef1.png"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6EC414B21B2B67B300A0B2C4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6EC414CB1B2B67B300A0B2C4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6EC414AC1B2B67B300A0B2C4 = {
+			isa = PBXGroup;
+			children = (
+				6EA5349C1B2F1B5100C69118 /* thirdViewController.h */,
+				6EA5349D1B2F1B5100C69118 /* thirdViewController.m */,
+				6EC414B71B2B67B300A0B2C4 /* robo_chef */,
+				6EC414D11B2B67B300A0B2C4 /* robo_chefTests */,
+				6EC414B61B2B67B300A0B2C4 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		6EC414B61B2B67B300A0B2C4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6EC414B51B2B67B300A0B2C4 /* robo_chef.app */,
+				6EC414CE1B2B67B300A0B2C4 /* robo_chefTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6EC414B71B2B67B300A0B2C4 /* robo_chef */ = {
+			isa = PBXGroup;
+			children = (
+				6EC414BC1B2B67B300A0B2C4 /* AppDelegate.h */,
+				6EC414BD1B2B67B300A0B2C4 /* AppDelegate.m */,
+				6EC414BF1B2B67B300A0B2C4 /* ViewController.h */,
+				6EC414C01B2B67B300A0B2C4 /* ViewController.m */,
+				6EC414C21B2B67B300A0B2C4 /* Main.storyboard */,
+				6EC414C51B2B67B300A0B2C4 /* Images.xcassets */,
+				6EC414C71B2B67B300A0B2C4 /* LaunchScreen.xib */,
+				6EC414B81B2B67B300A0B2C4 /* Supporting Files */,
+				6E59B5E61B2E2BA800ECA6F5 /* SecondViewController.h */,
+				6E59B5E71B2E2BA800ECA6F5 /* SecondViewController.m */,
+			);
+			path = robo_chef;
+			sourceTree = "<group>";
+		};
+		6EC414B81B2B67B300A0B2C4 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				6E44ECF91B2F88A6005911D5 /* fruit-and-vegetables.jpg */,
+				6EC414DE1B2B78C800A0B2C4 /* robot-chef1.png */,
+				6E44ECFB1B2F88C4005911D5 /* 3749818-big-cup-in-best-blue-chef-robot-gestures-3d-robot.jpg */,
+				6EC414B91B2B67B300A0B2C4 /* Info.plist */,
+				6EC414BA1B2B67B300A0B2C4 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		6EC414D11B2B67B300A0B2C4 /* robo_chefTests */ = {
+			isa = PBXGroup;
+			children = (
+				6EC414D41B2B67B300A0B2C4 /* robo_chefTests.m */,
+				6EC414D21B2B67B300A0B2C4 /* Supporting Files */,
+			);
+			path = robo_chefTests;
+			sourceTree = "<group>";
+		};
+		6EC414D21B2B67B300A0B2C4 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				6EC414D31B2B67B300A0B2C4 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6EC414B41B2B67B300A0B2C4 /* robo_chef */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6EC414D81B2B67B300A0B2C4 /* Build configuration list for PBXNativeTarget "robo_chef" */;
+			buildPhases = (
+				6EC414B11B2B67B300A0B2C4 /* Sources */,
+				6EC414B21B2B67B300A0B2C4 /* Frameworks */,
+				6EC414B31B2B67B300A0B2C4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = robo_chef;
+			productName = robo_chef;
+			productReference = 6EC414B51B2B67B300A0B2C4 /* robo_chef.app */;
+			productType = "com.apple.product-type.application";
+		};
+		6EC414CD1B2B67B300A0B2C4 /* robo_chefTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6EC414DB1B2B67B300A0B2C4 /* Build configuration list for PBXNativeTarget "robo_chefTests" */;
+			buildPhases = (
+				6EC414CA1B2B67B300A0B2C4 /* Sources */,
+				6EC414CB1B2B67B300A0B2C4 /* Frameworks */,
+				6EC414CC1B2B67B300A0B2C4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6EC414D01B2B67B300A0B2C4 /* PBXTargetDependency */,
+			);
+			name = robo_chefTests;
+			productName = robo_chefTests;
+			productReference = 6EC414CE1B2B67B300A0B2C4 /* robo_chefTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6EC414AD1B2B67B300A0B2C4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = "Ravisha Thallapalli";
+				TargetAttributes = {
+					6EC414B41B2B67B300A0B2C4 = {
+						CreatedOnToolsVersion = 6.3.2;
+					};
+					6EC414CD1B2B67B300A0B2C4 = {
+						CreatedOnToolsVersion = 6.3.2;
+						TestTargetID = 6EC414B41B2B67B300A0B2C4;
+					};
+				};
+			};
+			buildConfigurationList = 6EC414B01B2B67B300A0B2C4 /* Build configuration list for PBXProject "robo_chef" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 6EC414AC1B2B67B300A0B2C4;
+			productRefGroup = 6EC414B61B2B67B300A0B2C4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6EC414B41B2B67B300A0B2C4 /* robo_chef */,
+				6EC414CD1B2B67B300A0B2C4 /* robo_chefTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6EC414B31B2B67B300A0B2C4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6EC414DF1B2B78C800A0B2C4 /* robot-chef1.png in Resources */,
+				6EC414C41B2B67B300A0B2C4 /* Main.storyboard in Resources */,
+				6E44ECFC1B2F88C4005911D5 /* 3749818-big-cup-in-best-blue-chef-robot-gestures-3d-robot.jpg in Resources */,
+				6E44ECFA1B2F88A6005911D5 /* fruit-and-vegetables.jpg in Resources */,
+				6EC414C91B2B67B300A0B2C4 /* LaunchScreen.xib in Resources */,
+				6EC414C61B2B67B300A0B2C4 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6EC414CC1B2B67B300A0B2C4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6EC414B11B2B67B300A0B2C4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6E59B5E81B2E2BA800ECA6F5 /* SecondViewController.m in Sources */,
+				6EC414C11B2B67B300A0B2C4 /* ViewController.m in Sources */,
+				6EC414BE1B2B67B300A0B2C4 /* AppDelegate.m in Sources */,
+				6EC414BB1B2B67B300A0B2C4 /* main.m in Sources */,
+				6EA5349E1B2F1B5100C69118 /* thirdViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6EC414CA1B2B67B300A0B2C4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6EC414D51B2B67B300A0B2C4 /* robo_chefTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6EC414D01B2B67B300A0B2C4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6EC414B41B2B67B300A0B2C4 /* robo_chef */;
+			targetProxy = 6EC414CF1B2B67B300A0B2C4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		6EC414C21B2B67B300A0B2C4 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6EC414C31B2B67B300A0B2C4 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		6EC414C71B2B67B300A0B2C4 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6EC414C81B2B67B300A0B2C4 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		6EC414D61B2B67B300A0B2C4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		6EC414D71B2B67B300A0B2C4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6EC414D91B2B67B300A0B2C4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = robo_chef/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		6EC414DA1B2B67B300A0B2C4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = robo_chef/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		6EC414DC1B2B67B300A0B2C4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = robo_chefTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/robo_chef.app/robo_chef";
+			};
+			name = Debug;
+		};
+		6EC414DD1B2B67B300A0B2C4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = robo_chefTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/robo_chef.app/robo_chef";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6EC414B01B2B67B300A0B2C4 /* Build configuration list for PBXProject "robo_chef" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6EC414D61B2B67B300A0B2C4 /* Debug */,
+				6EC414D71B2B67B300A0B2C4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6EC414D81B2B67B300A0B2C4 /* Build configuration list for PBXNativeTarget "robo_chef" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6EC414D91B2B67B300A0B2C4 /* Debug */,
+				6EC414DA1B2B67B300A0B2C4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6EC414DB1B2B67B300A0B2C4 /* Build configuration list for PBXNativeTarget "robo_chefTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6EC414DC1B2B67B300A0B2C4 /* Debug */,
+				6EC414DD1B2B67B300A0B2C4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6EC414AD1B2B67B300A0B2C4 /* Project object */;
+}
