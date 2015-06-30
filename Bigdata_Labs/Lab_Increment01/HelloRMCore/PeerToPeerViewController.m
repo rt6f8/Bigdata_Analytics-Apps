@@ -254,18 +254,21 @@
     }
     else if([cmd isEqualToString:@"SMS"]){
         MFMessageComposeViewController *controller = [[MFMessageComposeViewController alloc] init];
+        controller.messageComposeDelegate = self;
         if([MFMessageComposeViewController canSendText])
         {
             controller.body = @"Hi This is your friend Romo";
-            controller.recipients = [NSArray arrayWithObjects:@"1(860)262-3937",@"1(248)247-0310",@"1(210)415-6433",@"1(816)787-6600", nil];
+            controller.recipients = [NSArray arrayWithObjects:@"+18602623937",@"+12482470310",@"+12104156433",@"+18167876600", nil];
             controller.messageComposeDelegate = self;
             [self presentViewController:controller animated:YES completion:^{
                 //
             }];
         }
     }
-    else if([cmd isEqualToString:@"Call"]){
-        NSString *phoneNumber = [@"tel://" stringByAppendingString:@"1(860)262-3937"];
+    else if([cmd isEqualToString:@"CALL"]){
+        self.romoCharater.expression=RMCharacterExpressionHappy;
+        self.romoCharater.emotion=RMCharacterEmotionHappy;
+        NSString *phoneNumber = [NSString stringWithFormat:@"tel://%@",@"+18162355932"];
         if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:phoneNumber]]) {
             [[UIApplication sharedApplication] openURL:[NSURL URLWithString:phoneNumber]];
         }

@@ -11,6 +11,7 @@
 #import "APLAccelerometerGraphViewController.h"
 #import "FacialDetectionViewController.h"
 #import "PeerToPeerViewController.h"
+#import "SpeechViewController.h"
 
 @interface LaunchViewController ()
 
@@ -53,7 +54,7 @@
     }else if (indexPath.row == 3){
         cell.name.text = @"Peer-to-Peer Connection";
     }else if (indexPath.row == 4){
-        cell.name.text = @"";
+        cell.name.text = @"Speak";
     }else if (indexPath.row == 5){
         cell.name.text = @"";
     }
@@ -79,7 +80,9 @@
         [self.navigationController pushViewController:vc animated:YES];
 
     }else if (indexPath.row == 4){
-    }else if (indexPath.row == 5){
+        UIStoryboard *stryBoard = [UIStoryboard storyboardWithName:@"Speech" bundle:[NSBundle mainBundle]];
+        SpeechViewController *vc = (SpeechViewController *)[stryBoard instantiateViewControllerWithIdentifier:@"Speech"];
+        [self.navigationController pushViewController:vc animated:YES];
     }
 }
 @end

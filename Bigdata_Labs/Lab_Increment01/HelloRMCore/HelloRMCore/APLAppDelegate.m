@@ -47,8 +47,12 @@
  */
 
 #import "APLAppDelegate.h"
-
 #import "APLGraphViewController.h"
+#import <SpeechKit/SpeechKit.h>
+
+#define INSERT_YOUR_APPLICATION_ID_HERE @"NMDPTRIAL_rotarian3_iiita_gmail_com20150630140615"
+#define INSERT_YOUR_HOST_ADDRESS_HERE @"sandbox.nmdp.nuancemobility.net"
+#define INSERT_YOUR_HOST_PORT_HERE 443
 
 @interface APLAppDelegate ()
 {
@@ -65,6 +69,23 @@
         motionmanager = [[CMMotionManager alloc] init];
     });
     return motionmanager;
+}
+
+- (void)setupSpeechKitConnection {
+    [SpeechKit setupWithID:INSERT_YOUR_APPLICATION_ID_HERE
+                      host:INSERT_YOUR_HOST_ADDRESS_HERE
+                      port:INSERT_YOUR_HOST_PORT_HERE
+                    useSSL:NO
+                  delegate:nil];
+    
+    // Set earcons to play
+    SKEarcon* earconStart	= [SKEarcon earconWithName:@"earcon_listening.wav"];
+    SKEarcon* earconStop	= [SKEarcon earconWithName:@"earcon_done_listening.wav"];
+    SKEarcon* earconCancel	= [SKEarcon earconWithName:@"earcon_cancel.wav"];
+    
+    [SpeechKit setEarcon:earconStart forType:SKStartRecordingEarconType];
+    [SpeechKit setEarcon:earconStop forType:SKStopRecordingEarconType];
+    [SpeechKit setEarcon:earconCancel forType:SKCancelRecordingEarconType];
 }
 
 

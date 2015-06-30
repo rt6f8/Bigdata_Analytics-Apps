@@ -53,5 +53,5 @@
 
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic, readonly) CMMotionManager *sharedManager;
-
+- (void)setupSpeechKitConnection;
 @end

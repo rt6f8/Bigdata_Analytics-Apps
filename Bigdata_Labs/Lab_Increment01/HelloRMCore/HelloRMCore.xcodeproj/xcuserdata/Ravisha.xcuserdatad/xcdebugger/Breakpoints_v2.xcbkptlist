@@ -115,46 +115,30 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "LaunchViewController.m"
-            timestampString = "457330143.193447"
+            filePath = "HelloRMCore/APLAccelerometerGraphViewController.mm"
+            timestampString = "457384370.12751"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "76"
-            endingLineNumber = "76"
-            landmarkName = "-tableView:didSelectRowAtIndexPath:"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
+            landmarkName = "-startUpdatesWithSliderValue:"
             landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[LaunchViewController tableView:didSelectRowAtIndexPath:]"
-                  moduleName = "HelloRMCore"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Ravisha/Desktop/big%20data%20lab4/HelloRMCore/LaunchViewController.m"
-                  timestampString = "457330809.757657"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "76"
-                  endingLineNumber = "76"
-                  offsetFromSymbolStart = "1092">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[LaunchViewController tableView:didSelectRowAtIndexPath:]"
-                  moduleName = "HelloRMCore"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Ravisha/Desktop/big%20data%20lab4/HelloRMCore/LaunchViewController.m"
-                  timestampString = "457330809.757794"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "76"
-                  endingLineNumber = "76"
-                  offsetFromSymbolStart = "1128">
-               </Location>
-            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HelloRMCore/APLGraphViewController.mm"
+            timestampString = "457384408.665793"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "81"
+            endingLineNumber = "81"
+            landmarkName = "-viewDidAppear:"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

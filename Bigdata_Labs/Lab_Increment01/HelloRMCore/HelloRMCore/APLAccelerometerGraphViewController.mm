@@ -312,13 +312,13 @@ static BOOL _debug = NO;
                     //
                 }];
                 [self stopUpdates];
-                [super turnCameraOff];
+                //[super turnCameraOff];
                 
             }else{
                 red = YES;
                 [self.Romo3 stopDriving];
                 [self stopUpdates];
-                [super turnCameraOff];
+                //[super turnCameraOff];
 //                dispatch_async(dispatch_get_main_queue(), ^{
 //                    [[[UIAlertView alloc] initWithTitle:@"Red" message:@"Stop" delegate:nil cancelButtonTitle:nil otherButtonTitles:@"Ok", nil] show];
 //                });
@@ -333,7 +333,7 @@ static BOOL _debug = NO;
                     //
                 }];
                 [self stopUpdates];
-                [super turnCameraOff];
+                //[super turnCameraOff];
 //                dispatch_async(dispatch_get_main_queue(), ^{
 //                    [[[UIAlertView alloc] initWithTitle:@"YELLOW" message:@"Turn Right" delegate:nil cancelButtonTitle:nil otherButtonTitles:@"Ok", nil] show];
 //                });
@@ -343,7 +343,7 @@ static BOOL _debug = NO;
                 [self.Romo3 driveForwardWithSpeed:0.55];
                 
                 [self stopUpdates];
-                [super turnCameraOff];
+                //[super turnCameraOff];
 //                dispatch_async(dispatch_get_main_queue(), ^{
 //                    [[[UIAlertView alloc] initWithTitle:@"GREEN" message:@"Do not stop" delegate:nil cancelButtonTitle:nil otherButtonTitles:@"Ok", nil] show];
 //                });
