@@ -10,31 +10,31 @@
 	<string>HelloRMCore</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>FA06D69F-5679-4636-BDB4-1E773357C120</key>
-		<string>https://github.com/Romotive/Software.git</string>
+		<key>040958DBF4D1696B83E5130C8DECB441CB8F3DC6</key>
+		<string>https://github.com/rt6f8/Bigdata_Analytics-Apps.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>iOS/SDK/Sample Code/HelloRMCore/HelloRMCore.xcodeproj/project.xcworkspace</string>
+	<string>Bigdata_Labs/Lab04/HelloRMCore/HelloRMCore.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>FA06D69F-5679-4636-BDB4-1E773357C120</key>
-		<string>../../../../../..</string>
+		<key>040958DBF4D1696B83E5130C8DECB441CB8F3DC6</key>
+		<string>../../../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/Romotive/Software.git</string>
+	<string>https://github.com/rt6f8/Bigdata_Analytics-Apps.git</string>
 	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
+	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>FA06D69F-5679-4636-BDB4-1E773357C120</string>
+	<string>040958DBF4D1696B83E5130C8DECB441CB8F3DC6</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>FA06D69F-5679-4636-BDB4-1E773357C120</string>
+			<string>040958DBF4D1696B83E5130C8DECB441CB8F3DC6</string>
 			<key>IDESourceControlWCCName</key>
-			<string>Software</string>
+			<string>Bigdata_Analytics-Apps</string>
 		</dict>
 	</array>
 </dict>

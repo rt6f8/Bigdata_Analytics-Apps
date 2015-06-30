@@ -303,13 +303,22 @@ static BOOL _debug = NO;
         if (circles.size() > greenCircles.size()) {
             if (circles.size()<yeloCircles.size()) {
                 //slow down & turn right;
-                yellow = NO;
+                yellow = YES;
 //                dispatch_async(dispatch_get_main_queue(), ^{
 //                    [[[UIAlertView alloc] initWithTitle:@"YELLOW" message:@"Turn Right" delegate:nil cancelButtonTitle:nil otherButtonTitles:@"Ok", nil] show];
 //                });
+                [self.Romo3 driveForwardWithSpeed:0.15];
+                [self.Romo3 turnByAngle:90 withRadius:0.25 completion:^(BOOL success, float heading) {
+                    //
+                }];
+                [self stopUpdates];
+                [super turnCameraOff];
                 
             }else{
                 red = YES;
+                [self.Romo3 stopDriving];
+                [self stopUpdates];
+                [super turnCameraOff];
 //                dispatch_async(dispatch_get_main_queue(), ^{
 //                    [[[UIAlertView alloc] initWithTitle:@"Red" message:@"Stop" delegate:nil cancelButtonTitle:nil otherButtonTitles:@"Ok", nil] show];
 //                });
@@ -318,12 +327,23 @@ static BOOL _debug = NO;
         }else{
             
             if (greenCircles.size()<yeloCircles.size()) {
+                yellow = YES;
+                [self.Romo3 driveForwardWithSpeed:0.15];
+                [self.Romo3 turnByAngle:90 withRadius:0.25 completion:^(BOOL success, float heading) {
+                    //
+                }];
+                [self stopUpdates];
+                [super turnCameraOff];
 //                dispatch_async(dispatch_get_main_queue(), ^{
 //                    [[[UIAlertView alloc] initWithTitle:@"YELLOW" message:@"Turn Right" delegate:nil cancelButtonTitle:nil otherButtonTitles:@"Ok", nil] show];
 //                });
                 
             }else{
                 green = YES;
+                [self.Romo3 driveForwardWithSpeed:0.55];
+                
+                [self stopUpdates];
+                [super turnCameraOff];
 //                dispatch_async(dispatch_get_main_queue(), ^{
 //                    [[[UIAlertView alloc] initWithTitle:@"GREEN" message:@"Do not stop" delegate:nil cancelButtonTitle:nil otherButtonTitles:@"Ok", nil] show];
 //                });
