@@ -220,14 +220,10 @@
             [self.romo driveForwardWithSpeed:1.0];
         }];
     }else if ([cmd isEqualToString:@"UP"]) {
-        [self.romo tiltByAngle:30 completion:^(BOOL success) {
-            //
-        }];
+        [self.romo driveForwardWithSpeed:0.75];
     }
     else if ([cmd isEqualToString:@"DOWN"]) {
-        [self.romo tiltByAngle:30 completion:^(BOOL success) {
-            //
-        }];
+        [self.romo driveForwardWithSpeed:0.25];
     }
     else if ([cmd isEqualToString:@"BACKWARD"]) {
         [self.romo driveBackwardWithSpeed:1.0];

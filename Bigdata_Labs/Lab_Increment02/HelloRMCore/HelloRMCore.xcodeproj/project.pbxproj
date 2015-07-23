@@ -38,6 +38,7 @@
 		6E7402831B3E21AD000C0D83 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E7402821B3E21AD000C0D83 /* ImageIO.framework */; };
 		6E7402851B3E2202000C0D83 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E7402841B3E2202000C0D83 /* CoreMedia.framework */; };
 		6EDA62721B54B3BC00C59B3A /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EDA62711B54B3BC00C59B3A /* AddressBook.framework */; };
+		6EDA62751B54DCEA00C59B3A /* WeatherCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EDA62741B54DCEA00C59B3A /* WeatherCell.m */; };
 		6EE36E181B430CFA00B35186 /* NutritionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EE36E151B430CFA00B35186 /* NutritionCell.m */; };
 		6EE36E2E1B430D4400B35186 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EE36E1C1B430D4400B35186 /* AFHTTPRequestOperation.m */; };
 		6EE36E2F1B430D4400B35186 /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EE36E1E1B430D4400B35186 /* AFHTTPRequestOperationManager.m */; };
@@ -132,6 +133,8 @@
 		6E7402821B3E21AD000C0D83 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		6E7402841B3E2202000C0D83 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		6EDA62711B54B3BC00C59B3A /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		6EDA62731B54DCEA00C59B3A /* WeatherCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherCell.h; sourceTree = "<group>"; };
+		6EDA62741B54DCEA00C59B3A /* WeatherCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherCell.m; sourceTree = "<group>"; };
 		6EE36E141B430CFA00B35186 /* NutritionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NutritionCell.h; sourceTree = "<group>"; };
 		6EE36E151B430CFA00B35186 /* NutritionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NutritionCell.m; sourceTree = "<group>"; };
 		6EE36E1B1B430D4400B35186 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
@@ -340,6 +343,8 @@
 				6EE36E151B430CFA00B35186 /* NutritionCell.m */,
 				6EE36E531B430E0A00B35186 /* SpeechViewController.h */,
 				6EE36E541B430E0A00B35186 /* SpeechViewController.m */,
+				6EDA62731B54DCEA00C59B3A /* WeatherCell.h */,
+				6EDA62741B54DCEA00C59B3A /* WeatherCell.m */,
 			);
 			name = SpeechRecognition;
 			sourceTree = "<group>";
@@ -596,6 +601,7 @@
 				6E0579E61B42466200308659 /* RoundProgressView.m in Sources */,
 				6E0579D41B423B3600308659 /* UIDevice+ExifOrientation.m in Sources */,
 				6EE36E4A1B430D6E00B35186 /* UIActivityIndicatorView+AFNetworking.m in Sources */,
+				6EDA62751B54DCEA00C59B3A /* WeatherCell.m in Sources */,
 				6EE36E2E1B430D4400B35186 /* AFHTTPRequestOperation.m in Sources */,
 				6EE36E351B430D4400B35186 /* AFURLResponseSerialization.m in Sources */,
 				85E622061B3D248400759AFC /* APLAppDelegate.m in Sources */,
