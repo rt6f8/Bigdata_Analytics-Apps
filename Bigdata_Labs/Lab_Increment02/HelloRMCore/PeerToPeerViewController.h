@@ -12,7 +12,7 @@
 #import <MessageUI/MessageUI.h>
 
 @interface PeerToPeerViewController : UIViewController <RMCoreDelegate,MFMessageComposeViewControllerDelegate>
-@property (strong,nonatomic) RMCoreRobotRomo3 *romo;
+@property (strong,nonatomic) RMCoreRobotRomo3<HeadTiltProtocol, DriveProtocol, LEDProtocol> *romo;
 @property (nonatomic, strong) RMCharacter *romoCharater;
 @property (nonatomic, strong) IBOutlet UIView *romoView;
 @end

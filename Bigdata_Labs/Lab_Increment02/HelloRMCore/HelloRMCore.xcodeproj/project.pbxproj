@@ -25,6 +25,10 @@
 		6E0579F81B424C4D00308659 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E0579F71B424C4D00308659 /* CFNetwork.framework */; };
 		6E0579FA1B424CB500308659 /* Socket.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E0579F91B424CB500308659 /* Socket.storyboard */; };
 		6E057A001B42532100308659 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E0579FF1B42532100308659 /* MessageUI.framework */; };
+		6E32AC451B62E9A800681734 /* FDRViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E32AC441B62E9A800681734 /* FDRViewController.m */; };
+		6E32AC4A1B62EADB00681734 /* libKairosSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E32AC491B62EADB00681734 /* libKairosSDK.a */; };
+		6E32AC4C1B62EB2600681734 /* FDR.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E32AC4B1B62EB2600681734 /* FDR.storyboard */; };
+		6E32AC4F1B62F07800681734 /* RoundedCornerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E32AC4E1B62F07800681734 /* RoundedCornerView.m */; };
 		6E4EF8421B5492B500B33DD5 /* Questions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E4EF8411B5492B500B33DD5 /* Questions.storyboard */; };
 		6E4EF8451B54930700B33DD5 /* QuestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E4EF8441B54930700B33DD5 /* QuestionViewController.m */; };
 		6E7402741B3DE09A000C0D83 /* RMCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E7402731B3DE09A000C0D83 /* RMCore.framework */; };
@@ -120,6 +124,13 @@
 		6E0579F71B424C4D00308659 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		6E0579F91B424CB500308659 /* Socket.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Socket.storyboard; sourceTree = "<group>"; };
 		6E0579FF1B42532100308659 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		6E32AC431B62E9A800681734 /* FDRViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDRViewController.h; sourceTree = "<group>"; };
+		6E32AC441B62E9A800681734 /* FDRViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FDRViewController.m; sourceTree = "<group>"; };
+		6E32AC481B62EAA800681734 /* KairosSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KairosSDK.h; sourceTree = "<group>"; };
+		6E32AC491B62EADB00681734 /* libKairosSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libKairosSDK.a; sourceTree = "<group>"; };
+		6E32AC4B1B62EB2600681734 /* FDR.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = FDR.storyboard; sourceTree = "<group>"; };
+		6E32AC4D1B62F07800681734 /* RoundedCornerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoundedCornerView.h; sourceTree = "<group>"; };
+		6E32AC4E1B62F07800681734 /* RoundedCornerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoundedCornerView.m; sourceTree = "<group>"; };
 		6E4EF8411B5492B500B33DD5 /* Questions.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Questions.storyboard; sourceTree = "<group>"; };
 		6E4EF8431B54930700B33DD5 /* QuestionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionViewController.h; sourceTree = "<group>"; };
 		6E4EF8441B54930700B33DD5 /* QuestionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionViewController.m; sourceTree = "<group>"; };
@@ -239,6 +250,7 @@
 				6E74027D1B3E0E20000C0D83 /* AVFoundation.framework in Frameworks */,
 				942AC64716E7F6820062CA8A /* UIKit.framework in Frameworks */,
 				942AC64916E7F6820062CA8A /* Foundation.framework in Frameworks */,
+				6E32AC4A1B62EADB00681734 /* libKairosSDK.a in Frameworks */,
 				942AC64B16E7F6820062CA8A /* CoreGraphics.framework in Frameworks */,
 				6E7402741B3DE09A000C0D83 /* RMCore.framework in Frameworks */,
 				942AC66C16E7F9700062CA8A /* ExternalAccessory.framework in Frameworks */,
@@ -319,6 +331,19 @@
 				6E0579EE1B424A9800308659 /* GCDAsyncSocket.m */,
 			);
 			name = Socket;
+			sourceTree = "<group>";
+		};
+		6E32AC421B62E8FE00681734 /* FaceDetection */ = {
+			isa = PBXGroup;
+			children = (
+				6E32AC4B1B62EB2600681734 /* FDR.storyboard */,
+				6E32AC481B62EAA800681734 /* KairosSDK.h */,
+				6E32AC431B62E9A800681734 /* FDRViewController.h */,
+				6E32AC441B62E9A800681734 /* FDRViewController.m */,
+				6E32AC4D1B62F07800681734 /* RoundedCornerView.h */,
+				6E32AC4E1B62F07800681734 /* RoundedCornerView.m */,
+			);
+			name = FaceDetection;
 			sourceTree = "<group>";
 		};
 		6E4EF8401B5491DC00B33DD5 /* Questions */ = {
@@ -423,6 +448,7 @@
 		942AC63A16E7F6820062CA8A = {
 			isa = PBXGroup;
 			children = (
+				6E32AC421B62E8FE00681734 /* FaceDetection */,
 				6E4EF8401B5491DC00B33DD5 /* Questions */,
 				6EE36E131B43061900B35186 /* SpeechRecognition */,
 				6E0579E71B424A3C00308659 /* PeerToPeer */,
@@ -446,6 +472,7 @@
 		942AC64516E7F6820062CA8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6E32AC491B62EADB00681734 /* libKairosSDK.a */,
 				6EDA62711B54B3BC00C59B3A /* AddressBook.framework */,
 				6EE36E6C1B431EDF00B35186 /* MobileCoreServices.framework */,
 				6EE36E6A1B431E9D00B35186 /* AudioToolbox.framework */,
@@ -582,6 +609,7 @@
 				6EE36E661B431B7C00B35186 /* mic_off.png in Resources */,
 				6E0579FA1B424CB500308659 /* Socket.storyboard in Resources */,
 				85E6220E1B3D260400759AFC /* RMCharacter.bundle in Resources */,
+				6E32AC4C1B62EB2600681734 /* FDR.storyboard in Resources */,
 				6E4EF8421B5492B500B33DD5 /* Questions.storyboard in Resources */,
 				942AC65D16E7F6820062CA8A /* Default-568h@2x.png in Resources */,
 				6EE36E671B431B7C00B35186 /* mic_off@2x.png in Resources */,
@@ -607,6 +635,7 @@
 				85E622061B3D248400759AFC /* APLAppDelegate.m in Sources */,
 				6EE36E4D1B430D6E00B35186 /* UIImageView+AFNetworking.m in Sources */,
 				6EE36E501B430D6E00B35186 /* UIWebView+AFNetworking.m in Sources */,
+				6E32AC4F1B62F07800681734 /* RoundedCornerView.m in Sources */,
 				6E74027A1B3DEF8F000C0D83 /* APLGraphViewController.mm in Sources */,
 				85E622071B3D248400759AFC /* APLDeviceMotionGraphViewController.m in Sources */,
 				6E0579D21B423B3600308659 /* DSFacialGestureCameraCapturer.m in Sources */,
@@ -637,6 +666,7 @@
 				6E0579D01B423B3600308659 /* DSFacialGesture.m in Sources */,
 				6E7402781B3DEF6D000C0D83 /* APLAccelerometerGraphViewController.mm in Sources */,
 				6EE36E181B430CFA00B35186 /* NutritionCell.m in Sources */,
+				6E32AC451B62E9A800681734 /* FDRViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -730,6 +760,11 @@
 				HEADER_SEARCH_PATHS = "$(SRCROOT)/../../frameworks/**";
 				INFOPLIST_FILE = "HelloRMCore/HelloRMCore-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/Ravisha/Downloads/Kairos-SDK-iOS-master/Kairos-SDK-iOS",
+					"$(PROJECT_DIR)",
+				);
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "f67771a5-4224-411e-bc13-c154fef0f448";
@@ -757,6 +792,11 @@
 				HEADER_SEARCH_PATHS = "$(SRCROOT)/../../frameworks/**";
 				INFOPLIST_FILE = "HelloRMCore/HelloRMCore-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/Ravisha/Downloads/Kairos-SDK-iOS-master/Kairos-SDK-iOS",
+					"$(PROJECT_DIR)",
+				);
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "f67771a5-4224-411e-bc13-c154fef0f448";

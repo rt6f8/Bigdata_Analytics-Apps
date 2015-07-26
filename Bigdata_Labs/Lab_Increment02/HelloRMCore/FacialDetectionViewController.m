@@ -77,8 +77,12 @@ const float kTimeToDissmissDetectedGestureLabel = 2.6f;
 -(void)startTimerDetecetedLabelDismisallTimer
 {
     [self.timer invalidate];
+    //self.timer = [NSTimer scheduledTimerWithTimeInterval:kTimeToDissmissDetectedGestureLabel
+                                                  //target:self selector:@selector(dismissDetectedLabel)
+                                                //userInfo:nil
+                                                 //repeats:NO];
     self.timer = [NSTimer scheduledTimerWithTimeInterval:kTimeToDissmissDetectedGestureLabel
-                                                  target:self selector:@selector(dismissDetectedLabel)
+                                                  target:self selector:nil
                                                 userInfo:nil
                                                  repeats:NO];
 }

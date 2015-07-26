@@ -12,6 +12,7 @@
 #import "FacialDetectionViewController.h"
 #import "PeerToPeerViewController.h"
 #import "SpeechViewController.h"
+#import "FDRViewController.h"
 
 @interface LaunchViewController ()
 
@@ -56,7 +57,7 @@
     }else if (indexPath.row == 4){
         cell.name.text = @"Speak";
     }else if (indexPath.row == 5){
-        cell.name.text = @"";
+        cell.name.text = @"Facedetection";
     }
     return cell;
 }
@@ -82,6 +83,10 @@
     }else if (indexPath.row == 4){
         UIStoryboard *stryBoard = [UIStoryboard storyboardWithName:@"Speech" bundle:[NSBundle mainBundle]];
         SpeechViewController *vc = (SpeechViewController *)[stryBoard instantiateViewControllerWithIdentifier:@"Speech"];
+        [self.navigationController pushViewController:vc animated:YES];
+    }else if (indexPath.row == 5){
+        UIStoryboard *stryBoard = [UIStoryboard storyboardWithName:@"FDR" bundle:[NSBundle mainBundle]];
+        FDRViewController *vc = (FDRViewController *)[stryBoard instantiateViewControllerWithIdentifier:@"FD"];
         [self.navigationController pushViewController:vc animated:YES];
     }
 }

@@ -82,8 +82,14 @@ using namespace cv;
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    [super viewWillAppear:animated];
     // Add Romo's face to self.view whenever the view will appear
     [self.Romo addToSuperview:self.romoCharaterView];
+}
+
+-(void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    [self.Romo removeFromSuperview];
 }
 
 - (void)startUpdatesWithSliderValue:(int)sliderValue
@@ -190,7 +196,6 @@ static BOOL _debug = NO;
     cvInRangeS(imgHSV, cvScalar(160, 100, 100), cvScalar(179, 255, 255), imgThreshed);//red
     cvInRangeS(imgHSV, cvScalar(22, 100, 100), cvScalar(38, 255, 255), yelowImgThreshed);//yellow
     cvInRangeS(imgHSV, cvScalar(38,100,100), cvScalar(75,255,255), greenThreshed);//green
-    
     cvReleaseImage(&imgHSV);
     
     Mat matThreshed = Mat(imgThreshed);
@@ -341,7 +346,6 @@ static BOOL _debug = NO;
             }else{
                 green = YES;
                 [self.Romo3 driveForwardWithSpeed:0.55];
-                
                 [self stopUpdates];
                 //[super turnCameraOff];
 //                dispatch_async(dispatch_get_main_queue(), ^{

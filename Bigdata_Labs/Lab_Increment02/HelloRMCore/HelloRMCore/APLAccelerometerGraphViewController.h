@@ -54,7 +54,7 @@ Copyright (C) 2012 Apple Inc. All Rights Reserved.
 @interface APLAccelerometerGraphViewController : APLGraphViewController <RMCoreDelegate>{
     double _min, _max;
 }
-@property (nonatomic, strong) RMCoreRobotRomo3 *Romo3;
+@property (nonatomic, strong) RMCoreRobotRomo3<HeadTiltProtocol, DriveProtocol, LEDProtocol> *Romo3;
 @property (nonatomic, strong) RMCharacter *Romo;
 @property (strong, nonatomic) IBOutlet UIView *romoCharaterView;
 @end

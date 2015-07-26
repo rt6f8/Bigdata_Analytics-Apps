@@ -8,7 +8,7 @@
 
 @interface ViewController : UIViewController <RMCoreDelegate>
 
-@property (nonatomic, strong) RMCoreRobotRomo3 *Romo3;
+@property (nonatomic, strong) RMCoreRobotRomo3<HeadTiltProtocol, DriveProtocol, LEDProtocol> *Romo3;
 
 // UI
 @property (nonatomic, strong) UIView *connectedView;
