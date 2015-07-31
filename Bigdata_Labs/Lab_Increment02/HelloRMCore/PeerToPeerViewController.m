@@ -10,7 +10,10 @@
 #import "GCDAsyncSocket.h"
 #include <ifaddrs.h>
 #include <arpa/inet.h>
+#import "AFHTTPRequestOperationManager.h"
+#import <AVFoundation/AVFoundation.h>
 
+#define WEATHER_BASE_URL @"http://api.openweathermap.org/data/2.5/weather?q="
 #define PORT 1234
 #define WELCOME_MSG  0
 #define ECHO_MSG     1
@@ -19,12 +22,17 @@
 #define READ_TIMEOUT 15.0
 #define READ_TIMEOUT_EXTENSION 10.0
 
+#define TTP @"http://tts-api.com/tts.mp3?"
+
 @interface PeerToPeerViewController ()
 @property (strong,nonatomic) dispatch_queue_t socketQueue;
 @property (strong,nonatomic) NSMutableArray *connectedSockets;
 @property (strong,nonatomic) GCDAsyncSocket *listenSocket;
 @property (assign) BOOL isRunning;
 @property (strong,nonatomic) UIButton *tiltDownButton;
+@property (strong, nonatomic) AVAudioPlayer *audioPlayer;
+@property (strong, nonatomic) AFHTTPRequestOperationManager *manager;
+@property (strong, nonatomic) NSArray *weatherArray;
 @end
 
 @implementation PeerToPeerViewController
@@ -279,6 +287,43 @@
             [[UIApplication sharedApplication] openURL:[NSURL URLWithString:phoneNumber]];
         }
     }
+    else if([cmd hasPrefix:@"WEATHER"]){
+        NSString *city = [cmd stringByReplacingOccurrencesOfString:@"WEATHER "
+                                                                      withString:@""];
+        NSString *url = [NSString stringWithFormat:@"%@%@",WEATHER_BASE_URL,city];
+        NSString *urlString = [url stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
+        _manager = [AFHTTPRequestOperationManager manager];
+        [_manager GET:urlString parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+            _weatherArray = [responseObject objectForKey:@"weather"];
+            NSString *description = [[_weatherArray objectAtIndex:0] objectForKey:@"description"];
+            [self textToSpeech:description];
+            NSString *temp = [[responseObject objectForKey:@"main"] objectForKey:@"temp"];
+            [self textToSpeech:[NSString stringWithFormat:@"Average Temparature is %@",temp]];
+        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"No Items Found, Please try again" delegate:nil cancelButtonTitle:nil otherButtonTitles:@"Ok", nil];
+            [alert show];
+            return;
+        }];
+        return;    }
+}
+
+-(void)textToSpeech:(NSString *)command{
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    NSString *sentence = [command stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
+    NSString *url = [NSString stringWithFormat:@"%@q=%@",TTP , sentence];
+    NSLog(@"url is: %@",url);
+    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
+    [manager GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        operation.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"audio/mpeg",nil];
+        NSData *audioData = responseObject;
+        [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback error:nil];
+        [[AVAudioSession sharedInstance] setActive:YES error:nil];
+        self.audioPlayer = [[AVAudioPlayer alloc] initWithData:audioData error:nil] ;
+        [self.audioPlayer prepareToPlay];
+        [self.audioPlayer play];
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Error: %@", error);
+    }];
 }
 
 /**

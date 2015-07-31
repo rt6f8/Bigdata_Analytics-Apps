@@ -11,13 +11,12 @@
 #import "AFHTTPRequestOperationManager.h"
 #import "NutritionCell.h"
 #import "WeatherCell.h"
+#import <AVFoundation/AVFoundation.h>
 
 #define BASE_URL @"https://api.nutritionix.com/v1_1/search/"
-
+#define TTP @"http://tts-api.com/tts.mp3?"
 #define WEATHER_BASE_URL @"http://api.openweathermap.org/data/2.5/weather?q="
 #define FIELDS @"?fields=item_name,item_id,brand_name,nf_calories,nf_total_fat&appId=c0927e7d&appKey=d801f26d5f8821e2e300dc75abc8548f"
-
-
 #define CELL_IDENTIFIER @"nutritionCell"
 #define WEATHER_CELL_IDENTIFIER @"weather"
 
@@ -45,7 +44,7 @@ enum TableViewState{
 @property (strong, nonatomic) SKVocalizer* vocalizer;
 @property (strong, nonatomic) APLAppDelegate *appDelegate;
 @property (nonatomic) enum TableViewState tableState;
-
+@property (strong, nonatomic) AVAudioPlayer *audioPlayer;
 @end
 const unsigned char SpeechKitApplicationKey[] = {0x20, 0x6c, 0x8d, 0x10, 0x95, 0x50, 0xdc, 0x65, 0x32, 0x11, 0x65, 0xfd, 0x57, 0x77, 0x7b, 0xdd, 0x0f, 0xfb, 0x0b, 0x48, 0x75, 0x2e, 0x2d, 0xa8, 0xbe, 0xbb, 0xd7, 0xfa, 0x1a, 0x70, 0xdd, 0x3b, 0xdc, 0x6a, 0x4b, 0x72, 0xbb, 0x27, 0xd7, 0xed, 0x39, 0x3c, 0xea, 0x90, 0xb3, 0x65, 0x6e, 0xc2, 0x60, 0x79, 0x0a, 0xd6, 0xa8, 0x38, 0x7e, 0x66, 0xf3, 0x56, 0x61, 0x0e, 0xc6, 0x3e, 0x49, 0xa3};
 @implementation SpeechViewController
@@ -65,26 +64,24 @@ const unsigned char SpeechKitApplicationKey[] = {0x20, 0x6c, 0x8d, 0x10, 0x95, 0
     // Dispose of any resources that can be recreated.
 }
 
-//- (IBAction)onSearchItem:(id)sender {
-//    if ([_searchField.text length] == 0) {
-//        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Enter a valid Food item" delegate:nil cancelButtonTitle:nil otherButtonTitles:@"Ok", nil];
-//        [alert show];
-//        return;
-//    }
-//    
-//    NSString *url = [NSString stringWithFormat:@"%@%@%@",BASE_URL,_searchField.text,FIELDS ];
-//    NSString *urlString = [url stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
-//    _manager = [AFHTTPRequestOperationManager manager];
-//    [_manager GET:urlString parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-//        _nutritionArray = [responseObject objectForKey:HITS];
-//        [_nutritionList reloadData];
-//    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-//        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"No Items Found, Please try again" delegate:nil cancelButtonTitle:nil otherButtonTitles:@"Ok", nil];
-//        [alert show];
-//        return;
-//    }];
-//    
-//}
+-(void)textToSpeech:(NSString *)command{
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    NSString *sentence = [command stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
+    NSString *url = [NSString stringWithFormat:@"%@q=%@",TTP , sentence];
+    NSLog(@"url is: %@",url);
+    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
+    [manager GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        operation.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"audio/mpeg",nil];
+        NSData *audioData = responseObject;
+        [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback error:nil];
+        [[AVAudioSession sharedInstance] setActive:YES error:nil];
+        self.audioPlayer = [[AVAudioPlayer alloc] initWithData:audioData error:nil] ;
+        [self.audioPlayer prepareToPlay];
+        [self.audioPlayer play];
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Error: %@", error);
+    }];
+}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     if (self.tableState == TableViewWeather) {
@@ -129,7 +126,7 @@ const unsigned char SpeechKitApplicationKey[] = {0x20, 0x6c, 0x8d, 0x10, 0x95, 0
     // This will initialize a new speech recognizer instance
     if (self.searchButton.isSelected) {
         self.voiceSearch = [[SKRecognizer alloc] initWithType:SKSearchRecognizerType
-                                                    detection:SKShortEndOfSpeechDetection
+                                                    detection:(SKShortEndOfSpeechDetection)
                                                      language:@"en_US"
                                                      delegate:self];
     }
@@ -230,6 +227,7 @@ const unsigned char SpeechKitApplicationKey[] = {0x20, 0x6c, 0x8d, 0x10, 0x95, 0
         self.searchButton.selected = !self.searchButton.isSelected;
         
         if (self.voiceSearch) {
+            [self.voiceSearch stopRecording];
             [self.voiceSearch cancel];
         }
         
@@ -237,6 +235,14 @@ const unsigned char SpeechKitApplicationKey[] = {0x20, 0x6c, 0x8d, 0x10, 0x95, 0
             NSNumberFormatter *f = [[NSNumberFormatter alloc] init];
             f.numberStyle = NSNumberFormatterDecimalStyle;
             NSString *phone = [_searchField.text stringByReplacingOccurrencesOfString:@"Call " withString:@""];
+            NSData *decode = [phone dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
+            phone = [[NSString alloc] initWithData:decode encoding:NSASCIIStringEncoding];
+            phone = [phone stringByReplacingOccurrencesOfString:@"?" withString:@""];
+            phone = [phone stringByReplacingOccurrencesOfString:@"+1" withString:@""];
+            phone = [phone stringByReplacingOccurrencesOfString:@" " withString:@""];
+            phone = [phone stringByReplacingOccurrencesOfString:@"-" withString:@""];
+            phone = [phone stringByReplacingOccurrencesOfString:@"(" withString:@""];
+            phone = [phone stringByReplacingOccurrencesOfString:@")" withString:@""];
             NSNumber *myNumber = [f numberFromString:phone];
             
             if (myNumber == nil) {

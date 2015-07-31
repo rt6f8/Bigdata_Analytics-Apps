@@ -9,6 +9,12 @@
 #import "FDRViewController.h"
 #import "KairosSDK.h"
 #import "APLAppDelegate.h"
+#import "AFHTTPRequestOperationManager.h"
+#import <AVFoundation/AVFoundation.h>
+#import "RecipeListViewController.h"
+
+#define TTP @"http://tts-api.com/tts.mp3?"
+#define RECOMMENDATIONS @"http://api.bigoven.com/recipes?api_key=VeZFSX05bbUWuR60Nc2IaYX8o9pL1D9Y"
 
 @interface FDRViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *startButton;
@@ -19,6 +25,9 @@
 @property (strong, nonatomic) SKRecognizer* voiceSearch;
 @property (strong, nonatomic) NSString *subjectName;
 @property (strong, nonatomic) APLAppDelegate *appDelegate;
+@property (strong, nonatomic) AVAudioPlayer *audioPlayer;
+@property (strong, nonatomic) IBOutlet UIButton *searchButton;
+@property (strong, nonatomic) NSDictionary *recos;
 @end
 
 const unsigned char SpeechKitApplicationKey1[] = {0x20, 0x6c, 0x8d, 0x10, 0x95, 0x50, 0xdc, 0x65, 0x32, 0x11, 0x65, 0xfd, 0x57, 0x77, 0x7b, 0xdd, 0x0f, 0xfb, 0x0b, 0x48, 0x75, 0x2e, 0x2d, 0xa8, 0xbe, 0xbb, 0xd7, 0xfa, 0x1a, 0x70, 0xdd, 0x3b, 0xdc, 0x6a, 0x4b, 0x72, 0xbb, 0x27, 0xd7, 0xed, 0x39, 0x3c, 0xea, 0x90, 0xb3, 0x65, 0x6e, 0xc2, 0x60, 0x79, 0x0a, 0xd6, 0xa8, 0x38, 0x7e, 0x66, 0xf3, 0x56, 0x61, 0x0e, 0xc6, 0x3e, 0x49, 0xa3};
@@ -26,6 +35,7 @@ const unsigned char SpeechKitApplicationKey1[] = {0x20, 0x6c, 0x8d, 0x10, 0x95, 
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.recos = [NSDictionary dictionaryWithObjectsAndKeys:@"&title_kw=mayo&any_kw=mayo,chicken,potato&pg=5&rpp=200",@"dayanand",@"&title_kw=chicken&any_kw=buffalo&pg=5&rpp=200",@"Sirish",@"&title_kw=rice&any_kw=mexican&pg=5&rpp=200",@"manohar",@"&title_kw=potato&any_kw=buffalo,pizza&pg=5&rpp=200",@"ravisha",@"&title_kw=potato&any_kw=buffalo,pizza&pg=5&rpp=200",@"default", nil];
     self.subjectView.frame = CGRectMake(0, 999, self.subjectView.frame.size.width, self.subjectView.frame.size.height);
     self.appDelegate = (APLAppDelegate *)[UIApplication sharedApplication].delegate;
     
@@ -50,11 +60,11 @@ const unsigned char SpeechKitApplicationKey1[] = {0x20, 0x6c, 0x8d, 0x10, 0x95, 
      ***********************************************/
      [KairosSDK setPreferredCameraType:KairosCameraFront];
      [KairosSDK setEnableFlash:YES];
-     [KairosSDK setEnableShutterSound:YES];
+     [KairosSDK setEnableShutterSound:NO];
      [KairosSDK setStillImageTintColor:@"DBDB4D"];
      [KairosSDK setProgressBarTintColor:@"FFFF00"];
-     [KairosSDK setErrorMessageMoveCloser:@"Yo move closer, dude!"];
-    [self startListening];
+     [KairosSDK setErrorMessageMoveCloser:@"Move Closer"];
+    //[self startListening];
     
     
 #pragma mark - Kairos SDK (Notifications)
@@ -118,6 +128,46 @@ const unsigned char SpeechKitApplicationKey1[] = {0x20, 0x6c, 0x8d, 0x10, 0x95, 
     [self recommend];
 }
 
+
+- (IBAction)startRecording:(id)sender {
+    self.searchButton.selected = !self.searchButton.isSelected;
+    
+    // This will initialize a new speech recognizer instance
+    if (self.searchButton.isSelected) {
+        self.voiceSearch = [[SKRecognizer alloc] initWithType:SKSearchRecognizerType
+                                                    detection:(SKShortEndOfSpeechDetection)
+                                                     language:@"en_US"
+                                                     delegate:self];
+    }
+    
+    // This will stop existing speech recognizer processes
+    else {
+        if (self.voiceSearch) {
+            [self.voiceSearch stopRecording];
+            [self.voiceSearch cancel];
+        }
+    }
+}
+
+-(void)textToSpeech:(NSString *)command{
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    NSString *sentence = [command stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
+    NSString *url = [NSString stringWithFormat:@"%@q=%@",TTP , sentence];
+    NSLog(@"url is: %@",url);
+    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
+    [manager GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        operation.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"audio/mpeg",nil];
+        NSData *audioData = responseObject;
+        [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback error:nil];
+        [[AVAudioSession sharedInstance] setActive:YES error:nil];
+        self.audioPlayer = [[AVAudioPlayer alloc] initWithData:audioData error:nil] ;
+        [self.audioPlayer prepareToPlay];
+        [self.audioPlayer play];
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Error: %@", error);
+    }];
+}
+
 -(void)recommend{
     /********* Image Capture Recognize *************
      * This /recognize call will display an image  *
@@ -129,17 +179,57 @@ const unsigned char SpeechKitApplicationKey1[] = {0x20, 0x6c, 0x8d, 0x10, 0x95, 
                                           success:^(NSDictionary *response, UIImage *image) {
                                               NSLog(@"Response------>\n%@", response);
                                               NSString *name = [[[[response objectForKey:@"images"] objectAtIndex:0] objectForKey:@"transaction"] objectForKey:@"subject"];
+                                              if ([name isEqual:[NSNull null]]) {
+                                                  return;
+                                              }
+//                                              [[[UIAlertView alloc] initWithTitle:@"Robo Chef" message:[NSString stringWithFormat:@"Hello %@", name ] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil] show];
+//                                              //[self recommendFor:name]
+                                              if (![name isEqual:[NSNull null]]) {
+                                                  [self textToSpeech:[NSString stringWithFormat:@"Hello %@, see your recommendations", name ]];
+                                              }else{
+                                                  [self textToSpeech:[NSString stringWithFormat:@"Hello train me"]];
+                                              }
                                               
-                                              [[[UIAlertView alloc] initWithTitle:@"Robo Chef" message:[NSString stringWithFormat:@"Hello %@", name ] delegate:nil cancelButtonTitle:@"" otherButtonTitles:nil, nil] show];
-                                              //[self recommendFor:name]
-                                              [self startListening];
+                                              [self recommendandDisplayResults:name ];
+                                              //[self startListening];
                                           } failure:^(NSDictionary *response, UIImage *image) {
                                               
                                               NSLog(@"%@", response);
-                                              [self startListening];
+                                              //[self startListening];
                                               
                                           }];
 }
+
+-(void)recommendandDisplayResults:(NSString *)name
+{
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Accept"];
+    [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    //[self.recos objectForKey:name];
+    //NSString *qstring = [name stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
+    NSString *url;
+    if ([self.recos objectForKey:name]!=nil) {
+        url = [NSString stringWithFormat:@"%@%@",RECOMMENDATIONS , [self.recos objectForKey:name]];
+    }
+    else{
+        url = [NSString stringWithFormat:@"%@%@",RECOMMENDATIONS , [self.recos objectForKey:@"default"]];
+    }
+    NSLog(@"url is: %@",url);
+    [manager GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSArray *results = [responseObject objectForKey:@"Results"];
+        UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"FDR" bundle:[NSBundle mainBundle]];
+        UINavigationController *navController = [storyBoard instantiateViewControllerWithIdentifier:@"recommendNav"];
+        RecipeListViewController *rvc = (RecipeListViewController *)[navController.viewControllers objectAtIndex:0];
+        rvc.recipeList = results;
+        [self presentViewController:navController animated:YES completion:^{
+            //
+        }];
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Error: %@", error);
+    }];
+}
+
 
 - (IBAction)test:(id)sender {
     /************ Image Capture Enroll *************

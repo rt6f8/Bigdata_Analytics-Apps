@@ -41,6 +41,10 @@
 		6E7402831B3E21AD000C0D83 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E7402821B3E21AD000C0D83 /* ImageIO.framework */; };
 		6E7402851B3E2202000C0D83 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E7402841B3E2202000C0D83 /* CoreMedia.framework */; };
 		6E9114ED1B67433000D78356 /* libKairosSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E32AC491B62EADB00681734 /* libKairosSDK.a */; };
+		6EBB65211B6A7A19004E68E6 /* RecipeListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EBB65201B6A7A19004E68E6 /* RecipeListViewController.m */; };
+		6EBB65241B6A7B89004E68E6 /* RecipeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EBB65231B6A7B89004E68E6 /* RecipeCell.m */; };
+		6EBB65261B6A8126004E68E6 /* no-image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6EBB65251B6A8126004E68E6 /* no-image.jpg */; };
+		6EBB65291B6A90A9004E68E6 /* RecipeDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EBB65281B6A90A9004E68E6 /* RecipeDetailsViewController.m */; };
 		6EDA62721B54B3BC00C59B3A /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EDA62711B54B3BC00C59B3A /* AddressBook.framework */; };
 		6EDA62751B54DCEA00C59B3A /* WeatherCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EDA62741B54DCEA00C59B3A /* WeatherCell.m */; };
 		6EE36E181B430CFA00B35186 /* NutritionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EE36E151B430CFA00B35186 /* NutritionCell.m */; };
@@ -143,6 +147,13 @@
 		6E7402801B3E21A5000C0D83 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		6E7402821B3E21AD000C0D83 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		6E7402841B3E2202000C0D83 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		6EBB651F1B6A7A19004E68E6 /* RecipeListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipeListViewController.h; sourceTree = "<group>"; };
+		6EBB65201B6A7A19004E68E6 /* RecipeListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipeListViewController.m; sourceTree = "<group>"; };
+		6EBB65221B6A7B89004E68E6 /* RecipeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipeCell.h; sourceTree = "<group>"; };
+		6EBB65231B6A7B89004E68E6 /* RecipeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipeCell.m; sourceTree = "<group>"; };
+		6EBB65251B6A8126004E68E6 /* no-image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "no-image.jpg"; sourceTree = "<group>"; };
+		6EBB65271B6A90A9004E68E6 /* RecipeDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipeDetailsViewController.h; sourceTree = "<group>"; };
+		6EBB65281B6A90A9004E68E6 /* RecipeDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipeDetailsViewController.m; sourceTree = "<group>"; };
 		6EDA62711B54B3BC00C59B3A /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		6EDA62731B54DCEA00C59B3A /* WeatherCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherCell.h; sourceTree = "<group>"; };
 		6EDA62741B54DCEA00C59B3A /* WeatherCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherCell.m; sourceTree = "<group>"; };
@@ -336,12 +347,19 @@
 		6E32AC421B62E8FE00681734 /* FaceDetection */ = {
 			isa = PBXGroup;
 			children = (
+				6EBB65251B6A8126004E68E6 /* no-image.jpg */,
 				6E32AC4B1B62EB2600681734 /* FDR.storyboard */,
 				6E32AC481B62EAA800681734 /* KairosSDK.h */,
 				6E32AC431B62E9A800681734 /* FDRViewController.h */,
 				6E32AC441B62E9A800681734 /* FDRViewController.m */,
 				6E32AC4D1B62F07800681734 /* RoundedCornerView.h */,
 				6E32AC4E1B62F07800681734 /* RoundedCornerView.m */,
+				6EBB651F1B6A7A19004E68E6 /* RecipeListViewController.h */,
+				6EBB65201B6A7A19004E68E6 /* RecipeListViewController.m */,
+				6EBB65221B6A7B89004E68E6 /* RecipeCell.h */,
+				6EBB65231B6A7B89004E68E6 /* RecipeCell.m */,
+				6EBB65271B6A90A9004E68E6 /* RecipeDetailsViewController.h */,
+				6EBB65281B6A90A9004E68E6 /* RecipeDetailsViewController.m */,
 			);
 			name = FaceDetection;
 			sourceTree = "<group>";
@@ -603,6 +621,7 @@
 				6E0579D61B423B7E00308659 /* Emotion.storyboard in Resources */,
 				942AC65116E7F6820062CA8A /* InfoPlist.strings in Resources */,
 				85E6220C1B3D24FB00759AFC /* MotionGraphsStoryboard.storyboard in Resources */,
+				6EBB65261B6A8126004E68E6 /* no-image.jpg in Resources */,
 				942AC65916E7F6820062CA8A /* Default.png in Resources */,
 				6EE36E5F1B4315FF00B35186 /* earcon_done_listening.wav in Resources */,
 				942AC65B16E7F6820062CA8A /* Default@2x.png in Resources */,
@@ -633,9 +652,11 @@
 				6EE36E2E1B430D4400B35186 /* AFHTTPRequestOperation.m in Sources */,
 				6EE36E351B430D4400B35186 /* AFURLResponseSerialization.m in Sources */,
 				85E622061B3D248400759AFC /* APLAppDelegate.m in Sources */,
+				6EBB65241B6A7B89004E68E6 /* RecipeCell.m in Sources */,
 				6EE36E4D1B430D6E00B35186 /* UIImageView+AFNetworking.m in Sources */,
 				6EE36E501B430D6E00B35186 /* UIWebView+AFNetworking.m in Sources */,
 				6E32AC4F1B62F07800681734 /* RoundedCornerView.m in Sources */,
+				6EBB65211B6A7A19004E68E6 /* RecipeListViewController.m in Sources */,
 				6E74027A1B3DEF8F000C0D83 /* APLGraphViewController.mm in Sources */,
 				85E622071B3D248400759AFC /* APLDeviceMotionGraphViewController.m in Sources */,
 				6E0579D21B423B3600308659 /* DSFacialGestureCameraCapturer.m in Sources */,
@@ -663,6 +684,7 @@
 				6EE36E4E1B430D6E00B35186 /* UIProgressView+AFNetworking.m in Sources */,
 				6E0579EF1B424A9800308659 /* GCDAsyncSocket.m in Sources */,
 				85E6220A1B3D248400759AFC /* APLGyroGraphViewController.m in Sources */,
+				6EBB65291B6A90A9004E68E6 /* RecipeDetailsViewController.m in Sources */,
 				6E0579D01B423B3600308659 /* DSFacialGesture.m in Sources */,
 				6E7402781B3DEF6D000C0D83 /* APLAccelerometerGraphViewController.mm in Sources */,
 				6EE36E181B430CFA00B35186 /* NutritionCell.m in Sources */,
@@ -759,7 +781,7 @@
 				GCC_PREFIX_HEADER = "HelloRMCore/HelloRMCore-Prefix.pch";
 				HEADER_SEARCH_PATHS = "$(SRCROOT)/../../frameworks/**";
 				INFOPLIST_FILE = "HelloRMCore/HelloRMCore-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/Ravisha/Downloads/Kairos-SDK-iOS-master/Kairos-SDK-iOS",
@@ -767,7 +789,7 @@
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "f67771a5-4224-411e-bc13-c154fef0f448";
+				PROVISIONING_PROFILE = "8844a765-9f5f-4b41-bb87-fa95c05dfb6a";
 				SDKROOT = iphoneos8.4;
 				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;
@@ -791,7 +813,7 @@
 				GCC_PREFIX_HEADER = "HelloRMCore/HelloRMCore-Prefix.pch";
 				HEADER_SEARCH_PATHS = "$(SRCROOT)/../../frameworks/**";
 				INFOPLIST_FILE = "HelloRMCore/HelloRMCore-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/Ravisha/Downloads/Kairos-SDK-iOS-master/Kairos-SDK-iOS",
@@ -799,7 +821,7 @@
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "f67771a5-4224-411e-bc13-c154fef0f448";
+				PROVISIONING_PROFILE = "8844a765-9f5f-4b41-bb87-fa95c05dfb6a";
 				SDKROOT = iphoneos8.4;
 				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;
